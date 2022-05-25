@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>registeration form</title>
+        <style>
+                    *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+                    }
+                    body{
+            background-color: rgb(255, 94,0);
+
+                    }
+                    fieldset{
+                background-color:black;
+                width:70%;
+                margin-bottom: 20px;
+                border: 1px solid rgb(255, 94,0);
+                border-radius:10px;
+                margin: auto;
+
+            }
+            legend{
+            background-color: rgb(255, 94,0);
+            border-radius: 8px;
+            padding: 5px;
+            font-size: 18px;
+            }
+            form{
+                margin:5px;
+                padding:10px;
+            }
+            label{
+                color:rgb(255,94,0);
+                display: block;
+                padding: 4px;
+                font-size: 18px;
+
+            }
+            .inp{
+            margin-left: 30px;
+            width: 60%;
+            height: 20px;
+            background-color:rgb(255, 94,0);
+            }
+            .gender{
+            display: inline;
+            width: 50%;
+            margin-left:25px ;
+            }
+            #sub{
+            float: right;
+            padding: 5px;
+            border:1px;
+            border-radius: 5%;
+            margin: 1px 1px 8px ;
+            font-size: 16px;
+            background-color:rgb(255, 94,0);
+            cursor: pointer;
+            }
+            .mf{
+            width: 30px;
+            height: 15px;
+            }
+            #a{
+         text-align: left;
+         background-color: black;
+         width:100% ;
+         font-size:medium;
+         padding: 0.8%;
+         margin-bottom:3%;
+        
+        }
+        #title{
+            color:   rgb(255, 94, 0);
+            text-decoration: none;
+            
+        }
+
+
+        @media screen and (max-width:1000px) {
+        #title{
+        font-size:20px;
+        }
+        #a{
+    margin-bottom:60px;
+    padding-right:3%;
+    }
+}
+        @media screen and (max-width:600px) {
+            #title{
+                font-size:18px;
+            }
+            #a{
+                text-align: center;
+                padding-bottom:6px;
+            }
+        }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="a" >
+            <a href="index.html" id="title" style=" display: inline-block;"><h1> ★彡[ᴛᴀꜱᴛʏ ꜰᴏᴏᴅ]彡★</h1> </a>
+        </div>     
+        <div id="form">
+            <fieldset>
+               <legend>🆁🅴🅶🅸🆂🆃🅴🆁🅰🆃🅸🅾🅽  🅵🅾🆁🅼</legend>
+               <form action="registeration.html" onsubmit="return validate()" autocomplete="on">
+                   <label>First name :</label>
+                   <input type="text" class="inp" required placeholder="type your first name..." ><br><br>
+                   <label>Last name :</label>
+                   <input type="text" class="inp" required placeholder="type your last name..." ><br><br>
+                   <label>Email :</label>
+                   <input type="email" class="inp" required placeholder="type your email..." ><br><br>
+                   <label>Password :</label>
+                   <input type="password" id="pass" class="inp" required placeholder="enter your password..." >
+                   <div id="wrong" style="color:rgb(255,94, 0); padding-left:50px ; display:none;"></div><br><br>
+                   <label>Phone number :</label>
+                   <input type="tel" pattern="[0-9]{11}" class="inp" required placeholder="enter your phone number..." ><br><br>
+                   <label>Address :</label>
+                   <input type="text" class="inp" required placeholder="type your Address..." ><br><br>
+                   <label  style="display:inline;">Gender :</label>
+                   <select name="" id="" style="background-color:rgb(255,94,0);padding:2px">
+                       <option value="">Male</option>
+                       <option value="">Female</option>
+                   </select><br><br>
+                   <input type="submit" id="sub" value="Submit">
+           
+               </form>
+           </fieldset>
+           </div>
+
+
+        <script>
+function validate(){
+    let pass=document.getElementById("pass").value;
+    let wrong=document.getElementById("wrong");
+    if(pass.length!=8)
+                {
+                    wrong.innerHTML="**password must be 8 characters**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+    if(pass.indexOf(' ')>=0)
+                {
+                    wrong.innerHTML="**password mustn't contain spaces**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+    if(pass.search(/[0-9]/)==-1)
+                {
+                    wrong.innerHTML="**password must contain numbers**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+    if(pass.search(/[a-z]/)==-1)
+                {
+                    wrong.innerHTML="**password must contain lowercase characters**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+    if(pass.search(/[&#*_-]/)==-1)
+                {
+                    wrong.innerHTML="**password must contain one special character**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+    let first=pass[0];
+                if(first.search(/[A-Z]/)==-1)
+                {
+                    wrong.innerHTML="**password must start with uppercase character**";
+                    wrong.style.removeProperty("display");
+                    return false;
+                }
+location.replace("file:///H:/programming/web%20languages/project/index.html?");
+return false;
+
+}
+        </script>
+    </body>
+</html>
